@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uzaylul - Tüm Bağlantılar</title>
+    <link rel="icon" type="image/png" href="U Logo T.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        :root {
+            --primary-color: #b2775d;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --border-color: #333;
+            --link-color: #5d8ab2;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 15% 50%, #b2775d0d 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, #b2775d0d 0%, transparent 20%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin: 0 auto 15px;
+            box-shadow: 0 0 20px #b2775d4d;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .contact-line {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .contact-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: #ffffff0d;
+            border: 1px solid #ffffff1a;
+            border-radius: 8px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-btn:hover {
+            background: #b2775d33;
+            border-color: #b2775d4d;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Social Links Style (for tab 1 & 2) */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: #ffffff0d;
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #f5f5f5;
+            transition: all 0.3s ease;
+            border: 1px solid #ffffff1a;
+        }
+
+        .link-item:hover {
+            background: #b2775d33;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px #0000004d;
+            border-color: #b2775d4d;
+        }
+
+        .link-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .link-text {
+            flex: 1;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .link-arrow {
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        /* Game Profiles Style (for tab 3) */
+        .profiles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .platform-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), #9a6048);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .platform-name {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .username {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .copy-btn, .link-btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            white-space: nowrap;
+        }
+
+        .copy-btn {
+            background-color: rgba(178, 119, 93, 0.2);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .link-btn {
+            background-color: rgba(93, 138, 178, 0.2);
+            color: var(--link-color);
+            border: 1px solid var(--link-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .link-btn:hover {
+            background-color: var(--link-color);
+            color: white;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .profiles-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-card {
+                flex-wrap: wrap;
+            }
+            
+            .platform-icon {
+                margin-bottom: 10px;
+                margin-right: 0;
+                width: 100%;
+            }
+            
+            .profile-info {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .card-actions {
+                flex-direction: row;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="U Logo.png" alt="uzaylul logo" class="logo">
+            <h1>uzaylul</h1>
+            <p class="subtitle">
+                Tüm sosyal medya ve oyun hesaplarıma aşağıdaki sekmelerden ulaşabilirsiniz<br>
+                <span class="contact-line">İletişim: <a href="mailto:uzaylul@gmail.com" class="contact-link">uzaylul@gmail.com</a></span>
+            </p>
+        </div>
+        
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="social1">Sosyal Medya 1</button>
+            <button class="tab-btn" data-tab="social2">Sosyal Medya 2</button>
+            <button class="tab-btn" data-tab="games">Oyun Profilleri</button>
+        </div>
+        
+        <!-- Tab 1: Social Media 1 -->
+        <div id="social1" class="tab-content active">
+            <div class="links">
+                <a href="https://youtube.com/@uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="link-text">YouTube</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://youtube.com/@uzaylul2" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="link-text">YouTube (2)</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://instagram.com/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="link-text">Instagram</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://tiktok.com/@uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="link-text">TikTok</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://reddit.com/r/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-reddit"></i>
+                    </div>
+                    <div class="link-text">Reddit</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://linkler2.uzaylul.com" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="link-text">Linkler 2</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tab 2: Social Media 2 -->
+        <div id="social2" class="tab-content">
+            <div class="links">
+                <a href="https://linkedin.com/in/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="link-text">LinkedIn</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="link-text">GitHub</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://medium.com/@uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-medium"></i>
+                    </div>
+                    <div class="link-text">Medium</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://x.com/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="link-text">X (Twitter)</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://mastodon.social/@uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-mastodon"></i>
+                    </div>
+                    <div class="link-text">Mastodon</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://bsky.app/profile/uzaylul.bsky.social" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="link-text">Bluesky</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://pinterest.com/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                    <div class="link-text">Pinterest</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://twitch.tv/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                    <div class="link-text">Twitch</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://kick.com/uzaylul" target="_blank" class="link-item">
+                    <div class="link-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="link-text">Kick</div>
+                    <div class="link-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Tab 3: Game Profiles -->
+        <div id="games" class="tab-content">
+            <div class="profiles-container" id="profiles-container">
+                <!-- Game profile cards will be generated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 uzaylul. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i> <span id="notification-text">Kopyalandı!</span>
+    </div>
+    
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Game profiles data
+        const profiles = [
+            { platform: "Epic Games", username: "uzaylul", icon: "E", link: "https://store.epicgames.com/tr/u/989551cb749940d2a498fdd1b5bfa17e" },
+            { platform: "Steam", username: "uzaylul", icon: "S", link: "https://steamcommunity.com/id/uzaylul" },
+            { platform: "Speedrun.com", username: "uzaylul", icon: "SR", link: "https://speedrun.com/users/uzaylul" },
+            { platform: "Itch.io", username: "uzaylul", icon: "I", link: "https://uzaylul.itch.io" },
+            { platform: "Minecraft", username: "uzaylul", icon: "M", link: "https://namemc.com/profile/uzaylul.1" },
+            { platform: "Roblox", username: "uzaylul", icon: "R", link: "https://roblox.com/users/122482369" },
+            { platform: "Battle.net", username: "uzaylul#2120", icon: "B", link: "" },
+            { platform: "EA", username: "uzaylul", icon: "E", link: "" },
+            { platform: "GOG", username: "uzaylul", icon: "G", link: "https://gog.com/u/uzaylul" },
+            { platform: "Riot", username: "uzaylul#000", icon: "R", link: "" },
+            { platform: "Rockstar Games", username: "uzaylul", icon: "R", link: "https://socialclub.rockstargames.com/member/uzaylul" },
+            { platform: "Ubisoft", username: "uzaylul", icon: "U", link: "" },
+            { platform: "Xbox", username: "uzaylul", icon: "X", link: "https://xboxgamertag.com/search/uzaylul" },
+            { platform: "PSN", username: "uzaylul", icon: "P", link: "https://psnprofiles.com/uzaylul" }
+        ];
+        
+        // DOM elements
+        const profilesContainer = document.getElementById('profiles-container');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notification-text');
+        
+        // Create profile cards
+        function createProfileCards() {
+            profiles.forEach(profile => {
+                const card = document.createElement('div');
+                card.className = 'profile-card';
+                
+                // Link button HTML
+                const linkButton = profile.link 
+                    ? `<a href="${profile.link}" target="_blank" class="link-btn">
+                          <i class="fas fa-external-link-alt"></i> Profil
+                       </a>`
+                    : '';
+                
+                card.innerHTML = `
+                    <div class="platform-icon">${profile.icon}</div>
+                    <div class="profile-info">
+                        <div class="platform-name">${profile.platform}</div>
+                        <div class="username">${profile.username}</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="copy-btn" data-username="${profile.username}">Kopyala</button>
+                        ${linkButton}
+                    </div>
+                `;
+                
+                profilesContainer.appendChild(card);
+            });
+            
+            // Add event listeners to copy buttons
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const username = this.getAttribute('data-username');
+                    copyToClipboard(username);
+                });
+            });
+        }
+        
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showNotification('Kopyalandı: ' + text);
+                } else {
+                    showNotification('Kopyalama başarısız oldu');
+                }
+            } catch (err) {
+                console.error('Kopyalama hatası:', err);
+                showNotification('Kopyalama başarısız oldu');
+            }
+            
+            document.body.removeChild(textarea);
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Handle logo loading error
+        document.querySelector('.logo').onerror = function() {
+            this.src = 'https://via.placeholder.com/120/b2775d/1e1e1e?text=U';
+            this.alt = 'uzaylul Logo - Yerel logo yüklenemedi';
+        };
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', createProfileCards);
+    </script>
+</body>
+</html>
