@@ -182,7 +182,7 @@
             font-size: 14px;
         }
 
-        /* Game Profiles Style (for tab 3) - DÜZELTİLDİ */
+        /* Game Profiles Style (for tab 3) */
         .profiles-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -241,6 +241,7 @@
             font-size: 18px;
             font-weight: 600;
             color: var(--text-color);
+            word-break: break-all;
         }
 
         .card-actions {
@@ -631,6 +632,8 @@
         
         // Game profiles data
         const profiles = [
+            { platform: "CS2 Crosshair", username: "CSGO-TpORA-p9Ley-TLQ3P-HzXJY-U9z6A", icon: "CS2", link: "" },
+            { platform: "Valorant Crosshair", username: "0;P;c;5;h;0;d;1;z;3;f;0;s;0;0t;5;0l;1;0v;0;0g;1;0o;0;0a;1;0e;1.0;1b;0", icon: "VAL", link: "" },
             { platform: "Epic Games", username: "uzaylul", icon: "E", link: "https://store.epicgames.com/tr/u/989551cb749940d2a498fdd1b5bfa17e" },
             { platform: "Steam", username: "uzaylul", icon: "S", link: "https://steamcommunity.com/id/uzaylul" },
             { platform: "Speedrun.com", username: "uzaylul", icon: "SR", link: "https://speedrun.com/users/uzaylul" },
@@ -703,7 +706,7 @@
             try {
                 const successful = document.execCommand('copy');
                 if (successful) {
-                    showNotification('Kopyalandı: ' + text);
+                    showNotification('Kopyalandı: ' + text.substring(0, 30) + (text.length > 30 ? '...' : ''));
                 } else {
                     showNotification('Kopyalama başarısız oldu');
                 }
