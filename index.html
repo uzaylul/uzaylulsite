@@ -132,7 +132,7 @@
             to { opacity: 1; }
         }
 
-        /* Social Links Style (for tab 1 & 2) */
+        /* Social Links Style */
         .links {
             display: flex;
             flex-direction: column;
@@ -182,7 +182,7 @@
             font-size: 14px;
         }
 
-        /* Game Profiles Style (for tab 3) */
+        /* Game Profiles Style */
         .profiles-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -290,6 +290,286 @@
             color: white;
         }
 
+        /* Game Tab Styles */
+        .game-container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .game-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .game-btn {
+            padding: 10px 20px;
+            background-color: rgba(178, 119, 93, 0.2);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .game-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .game-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .game-mode-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .mode-btn {
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .game-canvas-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        #gameCanvas {
+            width: 100%;
+            height: 500px;
+            background-color: #000;
+            border-radius: 8px;
+            display: block;
+            border: 1px solid #333;
+        }
+
+        .game-instructions {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .instructions-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .player-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .player-control {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .player-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .controls-list {
+            list-style-type: none;
+            font-size: 14px;
+        }
+
+        .controls-list li {
+            margin-bottom: 3px;
+        }
+
+        .key {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-right: 5px;
+            border: 1px solid #444;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        .score {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Roblox Games and Store Styles */
+        .roblox-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .roblox-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .roblox-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .roblox-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .roblox-info {
+            padding: 20px;
+        }
+
+        .roblox-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .roblox-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .roblox-play-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00a2ff;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .roblox-play-btn:hover {
+            background-color: #0088d6;
+            transform: translateY(-2px);
+        }
+
+        .store-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .store-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .store-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .store-info {
+            padding: 15px;
+        }
+
+        .store-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .store-price {
+            font-size: 14px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .store-buy-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .store-buy-btn:hover {
+            background-color: #9a6048;
+            transform: translateY(-2px);
+        }
+
         /* Notification */
         .notification {
             position: fixed;
@@ -373,6 +653,18 @@
                 white-space: nowrap;
                 flex-shrink: 0;
             }
+            
+            #gameCanvas {
+                height: 400px;
+            }
+            
+            .player-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .roblox-container, .store-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -414,6 +706,20 @@
                 font-size: 0.8rem;
                 min-width: 70px;
             }
+            
+            #gameCanvas {
+                height: 350px;
+            }
+            
+            .game-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .game-controls {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -433,6 +739,9 @@
             <button class="tab-btn active" data-tab="social1">Sosyal Medya 1</button>
             <button class="tab-btn" data-tab="social2">Sosyal Medya 2</button>
             <button class="tab-btn" data-tab="games">Oyun Profilleri</button>
+            <button class="tab-btn" data-tab="roblox-games">Oyunlar</button>
+            <button class="tab-btn" data-tab="store">Mağaza</button>
+            <button class="tab-btn" data-tab="spacewar">Spacewar</button>
         </div>
         
         <!-- Tab 1: Social Media 1 -->
@@ -583,7 +892,6 @@
                     </div>
                 </a>
                 
-                <!-- Spotify Bağlantısı Eklendi -->
                 <a href="https://open.spotify.com/user/317cyiznuu5m52kpbujoaoz2q5sa" target="_blank" class="link-item">
                     <div class="link-icon">
                         <i class="fab fa-spotify"></i>
@@ -600,6 +908,159 @@
         <div id="games" class="tab-content">
             <div class="profiles-container" id="profiles-container">
                 <!-- Game profile cards will be generated by JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Tab 4: Roblox Games -->
+        <div id="roblox-games" class="tab-content">
+            <div class="roblox-container">
+                <div class="roblox-card">
+                    <img src="https://tr.rbxcdn.com/180DAY-72de0cda1cd9d67896ce84b63e84971f/150/150/Image/Webp/noFilter" alt="uzaylul store" class="roblox-image">
+                    <div class="roblox-info">
+                        <h3 class="roblox-title">uzaylul store</h3>
+                        <p class="roblox-description">Resmi uzaylul mağazası! En iyi araçlar, eşyalar ve daha fazlası burada. Roblox'ta benzersiz bir alışveriş deneyimi yaşayın.</p>
+                        <a href="https://www.roblox.com/tr/games/403161769/uzaylul-store" target="_blank" class="roblox-play-btn">
+                            <i class="fas fa-play"></i> Oyna
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="roblox-card">
+                    <img src="https://tr.rbxcdn.com/180DAY-2ed57770b25aea7853ef1a64592ffdbf/150/150/Image/Webp/noFilter" alt="uzaylul war" class="roblox-image">
+                    <div class="roblox-info">
+                        <h3 class="roblox-title">uzaylul war</h3>
+                        <p class="roblox-description">Epik savaşların yaşandığı aksiyon dolu bir oyun. Takımını seç, silahını al ve savaşmaya başla! En iyi savaşçı olmak için mücadele et.</p>
+                        <a href="https://www.roblox.com/tr/games/16545317348/uzaylul-war" target="_blank" class="roblox-play-btn">
+                            <i class="fas fa-play"></i> Oyna
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab 5: Store -->
+        <div id="store" class="tab-content">
+            <div class="store-container">
+                <div class="store-card">
+                    <img src="https://tr.rbxcdn.com/180DAY-e76f69ae601829bb832fcf2373a21cbb/420/420/Shirt/Webp/noFilter" alt="uzaylul t-shirt black" class="store-image">
+                    <div class="store-info">
+                        <h3 class="store-title">uzaylul t-shirt black</h3>
+                        <p class="store-price">10 Robux</p>
+                        <a href="https://www.roblox.com/tr/catalog/14365795545/uzaylul-t-shirt-black" target="_blank" class="store-buy-btn">
+                            <i class="fas fa-shopping-cart"></i> Satın Al
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="store-card">
+                    <img src="https://tr.rbxcdn.com/180DAY-34864f6b2db9a87ab5de80ba09784555/420/420/Shirt/Webp/noFilter" alt="uzaylul hearted t-shirt black" class="store-image">
+                    <div class="store-info">
+                        <h3 class="store-title">uzaylul hearted t-shirt black</h3>
+                        <p class="store-price">10 Robux</p>
+                        <a href="https://www.roblox.com/tr/catalog/13602027352/uzaylul-hearted-t-shirt-black" target="_blank" class="store-buy-btn">
+                            <i class="fas fa-shopping-cart"></i> Satın Al
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="store-card">
+                    <img src="https://tr.rbxcdn.com/180DAY-f91f35a253864e8c8bcce2ff2f291917/420/420/Shirt/Webp/noFilter" alt="uzaylul t-shirt white" class="store-image">
+                    <div class="store-info">
+                        <h3 class="store-title">uzaylul t-shirt white</h3>
+                        <p class="store-price">10 Robux</p>
+                        <a href="https://www.roblox.com/tr/catalog/14714456686/uzaylul-t-shirt-white" target="_blank" class="store-buy-btn">
+                            <i class="fas fa-shopping-cart"></i> Satın Al
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="store-card">
+                    <img src="https://tr.rbxcdn.com/180DAY-825f3f624a18febb2af85629561ade0c/420/420/Shirt/Webp/noFilter" alt="uzaylul hearted t-shirt white" class="store-image">
+                    <div class="store-info">
+                        <h3 class="store-title">uzaylul hearted t-shirt white</h3>
+                        <p class="store-price">10 Robux</p>
+                        <a href="https://www.roblox.com/tr/catalog/13900338614/uzaylul-hearted-t-shirt-white" target="_blank" class="store-buy-btn">
+                            <i class="fas fa-shopping-cart"></i> Satın Al
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab 6: Spacewar Game -->
+        <div id="spacewar" class="tab-content">
+            <div class="game-container">
+                <div class="game-header">
+                    <div class="game-title">Spacewar</div>
+                    <div class="game-controls">
+                        <button id="startBtn" class="game-btn">Oyunu Başlat</button>
+                        <button id="pauseBtn" class="game-btn">Durdur/Devam</button>
+                        <button id="resetBtn" class="game-btn">Yeniden Başlat</button>
+                    </div>
+                </div>
+                
+                <div class="game-mode-selector">
+                    <button id="twoPlayerMode" class="mode-btn active">İki Oyuncu</button>
+                    <button id="singlePlayerMode" class="mode-btn">Tek Oyuncu (NPC)</button>
+                </div>
+                
+                <div class="game-canvas-container">
+                    <canvas id="gameCanvas"></canvas>
+                </div>
+                
+                <div class="game-stats">
+                    <div>Oyuncu 1 Skor: <span id="score1" class="score">0</span></div>
+                    <div id="player2Stats">Oyuncu 2 Skor: <span id="score2" class="score">0</span></div>
+                    <div id="npcStats" style="display: none;">NPC Skor: <span id="scoreNPC" class="score">0</span></div>
+                    <div>Kalan Süre: <span id="timer" class="score">120</span>s</div>
+                </div>
+                
+                <div class="game-instructions">
+                    <div class="instructions-title">Oyun Kontrolleri</div>
+                    <p id="modeDescription">İki oyuncu, uzay gemilerini kontrol ederek birbirlerini vurmaya çalışır. Ortadaki yıldızın yerçekimi etkisi gemileri etkiler.</p>
+                    
+                    <div class="player-controls">
+                        <div class="player-control">
+                            <div class="player-title">Oyuncu 1 (Kırmızı)</div>
+                            <ul class="controls-list">
+                                <li><span class="key">↑</span> İleri git</li>
+                                <li><span class="key">←</span> Sola dön</li>
+                                <li><span class="key">→</span> Sağa dön</li>
+                                <li><span class="key">↓</span> Ateş et</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="player2Controls" class="player-control">
+                            <div class="player-title">Oyuncu 2 (Mavi)</div>
+                            <ul class="controls-list">
+                                <li><span class="key">W</span> İleri git</li>
+                                <li><span class="key">A</span> Sola dön</li>
+                                <li><span class="key">D</span> Sağa dön</li>
+                                <li><span class="key">S</span> Ateş et</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="npcInfo" class="player-control" style="display: none;">
+                            <div class="player-title">NPC (Yeşil)</div>
+                            <ul class="controls-list">
+                                <li><i class="fas fa-robot"></i> Otomatik kontrol</li>
+                                <li>Oyuncuyu takip eder</li>
+                                <li>Akıllı ateş eder</li>
+                                <li>Yerçekiminden kaçınır</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 15px; font-size: 14px;">
+                        <p><strong>Oyun Kuralları:</strong></p>
+                        <ul style="padding-left: 20px;">
+                            <li>Her vuruş 10 puan değerinde</li>
+                            <li>Oyun süresi 2 dakika</li>
+                            <li>Gemi yıldıza çarparsa patlar</li>
+                            <li>Süre bitince en yüksek puanlı oyuncu kazanır</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -627,6 +1088,20 @@
                 // Show corresponding content
                 const tabId = button.getAttribute('data-tab');
                 document.getElementById(tabId).classList.add('active');
+                
+                // Handle game tab visibility
+                if (tabId === 'spacewar') {
+                    resizeCanvas();
+                    if (isGameRunning && !isPaused) {
+                        requestAnimationFrame(gameLoop);
+                    }
+                } else {
+                    // Pause game when switching away from game tab
+                    if (gameLoopId) {
+                        cancelAnimationFrame(gameLoopId);
+                        gameLoopId = null;
+                    }
+                }
             });
         });
         
@@ -734,8 +1209,849 @@
             this.alt = 'uzaylul Logo - Yerel logo yüklenemedi';
         };
         
+        // ==================== SPACEWAR GAME ====================
+        
+        // Game variables
+        let canvas, ctx;
+        let isGameRunning = false;
+        let isPaused = false;
+        let gameLoopId = null;
+        let lastTime = 0;
+        let gameTime = 120; // 2 minutes in seconds
+        let score1 = 0, score2 = 0, scoreNPC = 0;
+        let gameMode = 'twoPlayer'; // 'twoPlayer' or 'singlePlayer'
+        
+        // Game objects
+        const player1 = {
+            x: 100,
+            y: 300,
+            angle: 0,
+            velocityX: 0,
+            velocityY: 0,
+            rotationSpeed: 0.08,
+            thrustPower: 0.1,
+            maxSpeed: 5,
+            health: 100,
+            color: '#FF5252',
+            lastShot: 0,
+            shotCooldown: 500,
+            bullets: []
+        };
+        
+        const player2 = {
+            x: 700,
+            y: 300,
+            angle: Math.PI,
+            velocityX: 0,
+            velocityY: 0,
+            rotationSpeed: 0.08,
+            thrustPower: 0.1,
+            maxSpeed: 5,
+            health: 100,
+            color: '#448AFF',
+            lastShot: 0,
+            shotCooldown: 500,
+            bullets: []
+        };
+        
+        const npc = {
+            x: 700,
+            y: 300,
+            angle: Math.PI,
+            velocityX: 0,
+            velocityY: 0,
+            rotationSpeed: 0.05,
+            thrustPower: 0.07,
+            maxSpeed: 3.5,
+            health: 100,
+            color: '#4CAF50',
+            lastShot: 0,
+            shotCooldown: 1000,
+            bullets: [],
+            targetAngle: 0,
+            lastDirectionChange: 0,
+            directionChangeCooldown: 800,
+            avoidanceMode: false,
+            avoidanceTimer: 0,
+            avoidanceAngle: 0
+        };
+        
+        const star = {
+            x: 400,
+            y: 300,
+            radius: 40,
+            gravity: 0.2
+        };
+        
+        // Input state
+        const keys = {};
+        
+        // Initialize game
+        function initGame() {
+            canvas = document.getElementById('gameCanvas');
+            ctx = canvas.getContext('2d');
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Event listeners for game controls
+            document.getElementById('startBtn').addEventListener('click', startGame);
+            document.getElementById('pauseBtn').addEventListener('click', togglePause);
+            document.getElementById('resetBtn').addEventListener('click', resetGame);
+            
+            // Game mode selectors
+            document.getElementById('twoPlayerMode').addEventListener('click', () => setGameMode('twoPlayer'));
+            document.getElementById('singlePlayerMode').addEventListener('click', () => setGameMode('singlePlayer'));
+            
+            // Keyboard event listeners
+            document.addEventListener('keydown', handleKeyDown);
+            document.addEventListener('keyup', handleKeyUp);
+            
+            // Prevent arrow keys from scrolling the page
+            window.addEventListener('keydown', function(e) {
+                if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].indexOf(e.code) > -1) {
+                    e.preventDefault();
+                }
+            }, false);
+        }
+        
+        // Set game mode
+        function setGameMode(mode) {
+            gameMode = mode;
+            
+            // Update UI
+            document.getElementById('twoPlayerMode').classList.toggle('active', mode === 'twoPlayer');
+            document.getElementById('singlePlayerMode').classList.toggle('active', mode === 'singlePlayer');
+            document.getElementById('player2Stats').style.display = mode === 'twoPlayer' ? 'block' : 'none';
+            document.getElementById('npcStats').style.display = mode === 'singlePlayer' ? 'block' : 'none';
+            document.getElementById('player2Controls').style.display = mode === 'twoPlayer' ? 'block' : 'none';
+            document.getElementById('npcInfo').style.display = mode === 'singlePlayer' ? 'block' : 'none';
+            
+            const modeDescription = document.getElementById('modeDescription');
+            if (mode === 'twoPlayer') {
+                modeDescription.textContent = "İki oyuncu, uzay gemilerini kontrol ederek birbirlerini vurmaya çalışır. Ortadaki yıldızın yerçekimi etkisi gemileri etkiler.";
+            } else {
+                modeDescription.textContent = "NPC'ye karşı tek başına savaş! Yeşil renkli NPC gemisi otomatik olarak hareket eder ve ateş eder. Onu yenmeye çalış! NPC daha yavaş hareket eder ve ateş eder.";
+            }
+            
+            // Reset game if running
+            if (isGameRunning) {
+                resetGame();
+            }
+        }
+        
+        // Resize canvas
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth;
+            canvas.height = 500;
+            
+            // Sağ üstteki beyazlık hatasını düzeltmek için canvas'ı temizleyelim
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            draw();
+        }
+        
+        // Start game
+        function startGame() {
+            if (!isGameRunning) {
+                isGameRunning = true;
+                isPaused = false;
+                gameTime = 120;
+                score1 = 0;
+                score2 = 0;
+                scoreNPC = 0;
+                updateScores();
+                lastTime = performance.now();
+                gameLoopId = requestAnimationFrame(gameLoop);
+                document.getElementById('startBtn').textContent = 'Oyun Devam Ediyor';
+            }
+        }
+        
+        // Toggle pause
+        function togglePause() {
+            if (!isGameRunning) return;
+            
+            isPaused = !isPaused;
+            if (!isPaused) {
+                lastTime = performance.now();
+                gameLoopId = requestAnimationFrame(gameLoop);
+            } else {
+                if (gameLoopId) {
+                    cancelAnimationFrame(gameLoopId);
+                    gameLoopId = null;
+                }
+            }
+        }
+        
+        // Reset game
+        function resetGame() {
+            isGameRunning = false;
+            isPaused = false;
+            
+            if (gameLoopId) {
+                cancelAnimationFrame(gameLoopId);
+                gameLoopId = null;
+            }
+            
+            // Reset players
+            player1.x = 100;
+            player1.y = 300;
+            player1.angle = 0;
+            player1.velocityX = 0;
+            player1.velocityY = 0;
+            player1.health = 100;
+            player1.bullets = [];
+            
+            player2.x = 700;
+            player2.y = 300;
+            player2.angle = Math.PI;
+            player2.velocityX = 0;
+            player2.velocityY = 0;
+            player2.health = 100;
+            player2.bullets = [];
+            
+            npc.x = 700;
+            npc.y = 300;
+            npc.angle = Math.PI;
+            npc.velocityX = 0;
+            npc.velocityY = 0;
+            npc.health = 100;
+            npc.bullets = [];
+            npc.lastDirectionChange = 0;
+            npc.avoidanceMode = false;
+            npc.avoidanceTimer = 0;
+            
+            gameTime = 120;
+            score1 = 0;
+            score2 = 0;
+            scoreNPC = 0;
+            updateScores();
+            
+            document.getElementById('startBtn').textContent = 'Oyunu Başlat';
+            draw();
+        }
+        
+        // Game loop
+        function gameLoop(currentTime) {
+            if (!isGameRunning || isPaused) return;
+            
+            const deltaTime = currentTime - lastTime;
+            lastTime = currentTime;
+            
+            update(deltaTime);
+            draw();
+            
+            gameLoopId = requestAnimationFrame(gameLoop);
+        }
+        
+        // Update game state
+        function update(deltaTime) {
+            if (!isGameRunning) return;
+            
+            const deltaSeconds = deltaTime / 1000;
+            
+            // Update game timer
+            gameTime -= deltaSeconds;
+            if (gameTime <= 0) {
+                gameTime = 0;
+                endGame();
+                return;
+            }
+            document.getElementById('timer').textContent = Math.ceil(gameTime);
+            
+            // Update players
+            updatePlayer(player1, deltaTime, true);
+            
+            if (gameMode === 'twoPlayer') {
+                updatePlayer(player2, deltaTime, false);
+            } else {
+                updateNPC(deltaTime);
+            }
+            
+            // Update bullets
+            updateBullets(player1.bullets, deltaTime);
+            if (gameMode === 'twoPlayer') {
+                updateBullets(player2.bullets, deltaTime);
+            } else {
+                updateBullets(npc.bullets, deltaTime);
+            }
+            
+            // Apply star gravity
+            applyGravity(player1);
+            if (gameMode === 'twoPlayer') {
+                applyGravity(player2);
+            } else {
+                applyGravity(npc);
+            }
+            
+            // Check collisions
+            checkCollisions();
+        }
+        
+        // Update player
+        function updatePlayer(player, deltaTime, isPlayer1) {
+            // Rotation
+            if (isPlayer1) {
+                if (keys['ArrowLeft']) player.angle -= player.rotationSpeed;
+                if (keys['ArrowRight']) player.angle += player.rotationSpeed;
+                if (keys['ArrowUp']) applyThrust(player);
+                if (keys['ArrowDown']) shoot(player, deltaTime);
+            } else {
+                if (keys['KeyA']) player.angle -= player.rotationSpeed;
+                if (keys['KeyD']) player.angle += player.rotationSpeed;
+                if (keys['KeyW']) applyThrust(player);
+                if (keys['KeyS']) shoot(player, deltaTime);
+            }
+            
+            // Update position
+            player.x += player.velocityX;
+            player.y += player.velocityY;
+            
+            // Apply friction
+            player.velocityX *= 0.99;
+            player.velocityY *= 0.99;
+            
+            // Wrap around screen
+            wrapAround(player);
+        }
+        
+        // Update NPC - TAMAMEN YENİDEN YAZILDI
+        function updateNPC(deltaTime) {
+            const now = Date.now();
+            
+            // Yıldıza olan mesafeyi hesapla
+            const dxStar = npc.x - star.x;
+            const dyStar = npc.y - star.y;
+            const distanceToStar = Math.sqrt(dxStar * dxStar + dyStar * dyStar);
+            
+            // Yıldıza çok yakınsa KAÇINMA MODUNA geç
+            if (distanceToStar < star.radius * 3) {
+                npc.avoidanceMode = true;
+                npc.avoidanceTimer = 1500; // 1.5 saniye kaçınma modu
+                
+                // Yıldızdan uzaklaşmak için açı hesapla
+                npc.avoidanceAngle = Math.atan2(dyStar, dxStar) + Math.PI;
+                npc.targetAngle = npc.avoidanceAngle;
+            } else if (npc.avoidanceMode) {
+                // Kaçınma modu devam ediyor
+                npc.avoidanceTimer -= deltaTime;
+                if (npc.avoidanceTimer <= 0) {
+                    npc.avoidanceMode = false;
+                }
+                
+                // Hala yıldıza yakınsa uzaklaşmaya devam et
+                if (distanceToStar < star.radius * 4) {
+                    npc.targetAngle = npc.avoidanceAngle;
+                }
+            }
+            
+            // Kaçınma modunda değilse oyuncuyu takip et
+            if (!npc.avoidanceMode) {
+                // Oyuncuya olan mesafeyi hesapla
+                const dx = player1.x - npc.x;
+                const dy = player1.y - npc.y;
+                const distanceToPlayer = Math.sqrt(dx * dx + dy * dy);
+                
+                // Hedef açıyı hesapla (oyuncuya doğru)
+                npc.targetAngle = Math.atan2(dy, dx);
+                
+                // Rastgele hareket ekle (daha az tahmin edilebilir yap)
+                if (now - npc.lastDirectionChange > npc.directionChangeCooldown) {
+                    npc.targetAngle += (Math.random() - 0.5) * 0.5;
+                    npc.lastDirectionChange = now;
+                }
+                
+                // İleri gitme kararı
+                if (distanceToPlayer > 200 && distanceToStar > star.radius * 4) {
+                    applyThrust(npc);
+                }
+                
+                // Ateş etme: daha az isabetli yap
+                const angleDiff = Math.atan2(
+                    Math.sin(npc.targetAngle - npc.angle),
+                    Math.cos(npc.targetAngle - npc.angle)
+                );
+                
+                if (distanceToPlayer < 300 && Math.abs(angleDiff) < 0.3) {
+                    if (Math.random() > 0.7) { // %30 şansla ateş et
+                        shoot(npc, deltaTime);
+                    }
+                }
+            } else {
+                // Kaçınma modunda: sürekli itme gücü uygula
+                applyThrust(npc);
+            }
+            
+            // Hedef açıya dön
+            let angleDiff = npc.targetAngle - npc.angle;
+            // Açı farkını normalize et [-PI, PI]
+            while (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
+            while (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
+            
+            if (angleDiff > 0) {
+                npc.angle += npc.rotationSpeed;
+            } else {
+                npc.angle -= npc.rotationSpeed;
+            }
+            
+            // Konum güncelleme
+            npc.x += npc.velocityX;
+            npc.y += npc.velocityY;
+            
+            // Sürtünme
+            npc.velocityX *= 0.98;
+            npc.velocityY *= 0.98;
+            
+            // Ekran kenarlarını geçme
+            wrapAround(npc);
+        }
+        
+        // Apply thrust to player/NPC
+        function applyThrust(entity) {
+            entity.velocityX += Math.cos(entity.angle) * entity.thrustPower;
+            entity.velocityY += Math.sin(entity.angle) * entity.thrustPower;
+            
+            // Hız sınırı
+            const speed = Math.sqrt(entity.velocityX * entity.velocityX + entity.velocityY * entity.velocityY);
+            if (speed > entity.maxSpeed) {
+                entity.velocityX = (entity.velocityX / speed) * entity.maxSpeed;
+                entity.velocityY = (entity.velocityY / speed) * entity.maxSpeed;
+            }
+        }
+        
+        // Apply gravity from star
+        function applyGravity(entity) {
+            const dx = star.x - entity.x;
+            const dy = star.y - entity.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance > star.radius + 15) {
+                const force = star.gravity / (distance * distance);
+                entity.velocityX += (dx / distance) * force;
+                entity.velocityY += (dy / distance) * force;
+            }
+        }
+        
+        // Shoot bullet
+        function shoot(entity, deltaTime) {
+            const now = Date.now();
+            if (now - entity.lastShot > entity.shotCooldown) {
+                const bullet = {
+                    x: entity.x + Math.cos(entity.angle) * 20,
+                    y: entity.y + Math.sin(entity.angle) * 20,
+                    velocityX: Math.cos(entity.angle) * 8 + entity.velocityX,
+                    velocityY: Math.sin(entity.angle) * 8 + entity.velocityY,
+                    life: 2000, // 2 seconds
+                    color: entity.color
+                };
+                entity.bullets.push(bullet);
+                entity.lastShot = now;
+            }
+        }
+        
+        // Update bullets
+        function updateBullets(bullets, deltaTime) {
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                const bullet = bullets[i];
+                bullet.x += bullet.velocityX;
+                bullet.y += bullet.velocityY;
+                bullet.life -= deltaTime;
+                
+                // Wrap around screen
+                wrapAroundBullet(bullet);
+                
+                // Remove old bullets
+                if (bullet.life <= 0) {
+                    bullets.splice(i, 1);
+                }
+            }
+        }
+        
+        // Wrap around screen for entities
+        function wrapAround(entity) {
+            if (entity.x < -20) entity.x = canvas.width + 20;
+            if (entity.x > canvas.width + 20) entity.x = -20;
+            if (entity.y < -20) entity.y = canvas.height + 20;
+            if (entity.y > canvas.height + 20) entity.y = -20;
+        }
+        
+        // Wrap around screen for bullets
+        function wrapAroundBullet(bullet) {
+            if (bullet.x < 0) bullet.x = canvas.width;
+            if (bullet.x > canvas.width) bullet.x = 0;
+            if (bullet.y < 0) bullet.y = canvas.height;
+            if (bullet.y > canvas.height) bullet.y = 0;
+        }
+        
+        // Check collisions
+        function checkCollisions() {
+            if (gameMode === 'twoPlayer') {
+                // Check bullet collisions between players
+                checkBulletCollisions(player1.bullets, player2, 'player2');
+                checkBulletCollisions(player2.bullets, player1, 'player1');
+            } else {
+                // Check bullet collisions between player and NPC
+                checkBulletCollisions(player1.bullets, npc, 'npc');
+                checkBulletCollisions(npc.bullets, player1, 'player1');
+            }
+            
+            // Check collision with star
+            checkStarCollision(player1);
+            if (gameMode === 'twoPlayer') {
+                checkStarCollision(player2);
+            } else {
+                checkStarCollision(npc);
+            }
+        }
+        
+        // Check bullet collisions with player/NPC - DÜZELTİLDİ
+        function checkBulletCollisions(bullets, target, targetType) {
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                const bullet = bullets[i];
+                const dx = bullet.x - target.x;
+                const dy = bullet.y - target.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // Çarpışma mesafesi: gemi boyutu + mermi boyutu
+                if (distance < 25) { // Artırıldı: daha kolay vurmak için
+                    // Vuruldu!
+                    target.health -= 25;
+                    bullets.splice(i, 1);
+                    
+                    // Skor güncelle
+                    if (targetType === 'player1') {
+                        if (gameMode === 'twoPlayer') {
+                            score2 += 10;
+                        } else {
+                            scoreNPC += 10;
+                        }
+                    } else if (targetType === 'player2') {
+                        score1 += 10;
+                    } else if (targetType === 'npc') {
+                        score1 += 10;
+                    }
+                    updateScores();
+                    
+                    // Hedef yok edildi mi?
+                    if (target.health <= 0) {
+                        if (targetType === 'player1' || targetType === 'player2') {
+                            respawnPlayer(target);
+                        } else if (targetType === 'npc') {
+                            respawnNPC();
+                        }
+                    }
+                    return; // Bir kerede sadece bir mermi çarpsın
+                }
+            }
+        }
+        
+        // Check collision with star - DÜZELTİLDİ
+        function checkStarCollision(entity) {
+            const dx = entity.x - star.x;
+            const dy = entity.y - star.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // Güvenli mesafe: yıldız yarıçapı + gemi boyutu
+            if (distance < star.radius + 20) {
+                // Yıldıza çarptı
+                entity.health = 0;
+                
+                // Skor güncelle ve respawn
+                if (entity === player1) {
+                    respawnPlayer(player1);
+                    if (gameMode === 'twoPlayer') {
+                        score2 += 5;
+                    } else {
+                        scoreNPC += 5;
+                    }
+                } else if (entity === player2) {
+                    respawnPlayer(player2);
+                    score1 += 5;
+                } else if (entity === npc) {
+                    respawnNPC();
+                    score1 += 5;
+                }
+                updateScores();
+            }
+        }
+        
+        // Respawn player
+        function respawnPlayer(player) {
+            player.x = player === player1 ? 100 : 700;
+            player.y = 300;
+            player.velocityX = 0;
+            player.velocityY = 0;
+            player.angle = player === player1 ? 0 : Math.PI;
+            player.health = 100;
+            player.bullets = [];
+        }
+        
+        // Respawn NPC
+        function respawnNPC() {
+            // NPC'yi oyuncudan uzak bir yere spawnla
+            npc.x = 700;
+            npc.y = 300;
+            
+            // Yıldızdan uzak olduğundan emin ol
+            const dx = npc.x - star.x;
+            const dy = npc.y - star.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < star.radius * 4) {
+                // Çok yakınsa uzaklaştır
+                npc.x = canvas.width - 100;
+                npc.y = 100;
+            }
+            
+            npc.velocityX = 0;
+            npc.velocityY = 0;
+            npc.angle = Math.PI;
+            npc.health = 100;
+            npc.bullets = [];
+            npc.lastDirectionChange = 0;
+            npc.avoidanceMode = false;
+            npc.avoidanceTimer = 0;
+        }
+        
+        // End game
+        function endGame() {
+            isGameRunning = false;
+            if (gameLoopId) {
+                cancelAnimationFrame(gameLoopId);
+                gameLoopId = null;
+            }
+            
+            // Kazananı göster
+            let message = "Oyun Bitti! ";
+            if (gameMode === 'twoPlayer') {
+                if (score1 > score2) {
+                    message += "Oyuncu 1 Kazandı!";
+                } else if (score2 > score1) {
+                    message += "Oyuncu 2 Kazandı!";
+                } else {
+                    message += "Berabere!";
+                }
+            } else {
+                if (score1 > scoreNPC) {
+                    message += "Tebrikler, NPC'yi Yendin!";
+                } else if (scoreNPC > score1) {
+                    message += "NPC Kazandı! Tekrar Deneyin.";
+                } else {
+                    message += "Berabere!";
+                }
+            }
+            
+            showNotification(message);
+            document.getElementById('startBtn').textContent = 'Oyunu Başlat';
+        }
+        
+        // Update score display
+        function updateScores() {
+            document.getElementById('score1').textContent = score1;
+            document.getElementById('score2').textContent = score2;
+            document.getElementById('scoreNPC').textContent = scoreNPC;
+        }
+        
+        // Draw game - BEYAZLIK HATASI DÜZELTİLDİ
+        function draw() {
+            // Clear canvas with black
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw star
+            const gradient = ctx.createRadialGradient(
+                star.x, star.y, star.radius / 2,
+                star.x, star.y, star.radius
+            );
+            gradient.addColorStop(0, '#FFD740');
+            gradient.addColorStop(1, '#FF9800');
+            
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw gravity field (optional, hafifçe görünür)
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius * 3, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(255, 152, 0, 0.1)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            
+            // Draw bullets
+            drawBullets(player1.bullets);
+            if (gameMode === 'twoPlayer') {
+                drawBullets(player2.bullets);
+            } else {
+                drawBullets(npc.bullets);
+            }
+            
+            // Draw players/NPC
+            drawPlayer(player1);
+            if (gameMode === 'twoPlayer') {
+                drawPlayer(player2);
+            } else {
+                drawPlayer(npc);
+            }
+            
+            // Draw HUD - BEYAZLIK HATASI DÜZELTİLDİ
+            drawHUD();
+        }
+        
+        // Draw player/NPC
+        function drawPlayer(player) {
+            ctx.save();
+            ctx.translate(player.x, player.y);
+            ctx.rotate(player.angle);
+            
+            // Draw ship
+            ctx.beginPath();
+            ctx.moveTo(15, 0);
+            ctx.lineTo(-10, 10);
+            ctx.lineTo(-10, -10);
+            ctx.closePath();
+            
+            ctx.fillStyle = player.color;
+            ctx.fill();
+            
+            // Draw engine flame if thrusting
+            const isThrusting = (player === player1 && keys['ArrowUp']) || 
+                              (player === player2 && keys['KeyW']) ||
+                              (player === npc && Math.random() > 0.5);
+            
+            if (isThrusting) {
+                ctx.beginPath();
+                ctx.moveTo(-10, 0);
+                ctx.lineTo(-20, 5);
+                ctx.lineTo(-20, -5);
+                ctx.closePath();
+                
+                ctx.fillStyle = player === npc ? '#8BC34A' : '#FF9800';
+                ctx.fill();
+            }
+            
+            ctx.restore();
+            
+            // Draw health bar - RENK DÜZELTMESİ
+            const healthBarWidth = 40;
+            const healthBarHeight = 6;
+            const healthPercentage = player.health / 100;
+            
+            // Health bar background
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+            ctx.fillRect(player.x - healthBarWidth/2, player.y - 30, healthBarWidth, healthBarHeight);
+            
+            // Health bar fill
+            ctx.fillStyle = healthPercentage > 0.5 ? '#4CAF50' : 
+                           healthPercentage > 0.25 ? '#FF9800' : '#F44336';
+            ctx.fillRect(player.x - healthBarWidth/2, player.y - 30, healthBarWidth * healthPercentage, healthBarHeight);
+            
+            // Health bar border
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(player.x - healthBarWidth/2, player.y - 30, healthBarWidth, healthBarHeight);
+        }
+        
+        // Draw bullets
+        function drawBullets(bullets) {
+            bullets.forEach(bullet => {
+                // Mermi çekirdeği
+                ctx.beginPath();
+                ctx.arc(bullet.x, bullet.y, 4, 0, Math.PI * 2);
+                ctx.fillStyle = bullet.color;
+                ctx.fill();
+                
+                // Mermi parlama efekti
+                const gradient = ctx.createRadialGradient(
+                    bullet.x, bullet.y, 2,
+                    bullet.x, bullet.y, 8
+                );
+                gradient.addColorStop(0, bullet.color + 'FF');
+                gradient.addColorStop(1, bullet.color + '00');
+                
+                ctx.beginPath();
+                ctx.arc(bullet.x, bullet.y, 8, 0, Math.PI * 2);
+                ctx.fillStyle = gradient;
+                ctx.fill();
+            });
+        }
+        
+        // Draw HUD - BEYAZLIK HATASI TAMAMEN DÜZELTİLDİ
+        function drawHUD() {
+            // HUD background - opacity düşürüldü
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            
+            // Player 1 HUD
+            ctx.fillRect(10, 10, 180, 80);
+            
+            ctx.fillStyle = '#FFF';
+            ctx.font = '16px monospace';
+            ctx.fillText('OYUNCU 1', 20, 30);
+            ctx.fillText('SKOR: ' + score1, 20, 50);
+            ctx.fillText('CAN: ' + player1.health, 20, 70);
+            
+            // Player 2 or NPC HUD
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(canvas.width - 190, 10, 180, 80);
+            
+            ctx.fillStyle = '#FFF';
+            if (gameMode === 'twoPlayer') {
+                ctx.fillText('OYUNCU 2', canvas.width - 180, 30);
+                ctx.fillText('SKOR: ' + score2, canvas.width - 180, 50);
+                ctx.fillText('CAN: ' + player2.health, canvas.width - 180, 70);
+            } else {
+                ctx.fillText('NPC', canvas.width - 180, 30);
+                ctx.fillText('SKOR: ' + scoreNPC, canvas.width - 180, 50);
+                ctx.fillText('CAN: ' + npc.health, canvas.width - 180, 70);
+            }
+            
+            // Timer - arkaplan rengi düzeltildi
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(canvas.width / 2 - 60, 10, 120, 40);
+            ctx.fillStyle = '#FFD740';
+            ctx.font = 'bold 20px monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('SÜRE: ' + Math.ceil(gameTime) + 's', canvas.width / 2, 35);
+            ctx.textAlign = 'left';
+            
+            // Mode indicator
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(canvas.width / 2 - 80, canvas.height - 40, 160, 30);
+            ctx.fillStyle = gameMode === 'twoPlayer' ? '#448AFF' : '#4CAF50';
+            ctx.font = 'bold 16px monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText(gameMode === 'twoPlayer' ? 'İKİ OYUNCU MODU' : 'TEK OYUNCU MODU', canvas.width / 2, canvas.height - 18);
+            ctx.textAlign = 'left';
+            
+            // Draw pause indicator
+            if (isPaused) {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                ctx.fillRect(canvas.width / 2 - 100, canvas.height / 2 - 50, 200, 100);
+                ctx.fillStyle = '#FFF';
+                ctx.font = 'bold 30px monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText('DURDURULDU', canvas.width / 2, canvas.height / 2);
+                ctx.textAlign = 'left';
+            }
+        }
+        
+        // Keyboard event handlers
+        function handleKeyDown(e) {
+            keys[e.code] = true;
+        }
+        
+        function handleKeyUp(e) {
+            keys[e.code] = false;
+        }
+        
         // Initialize on page load
-        document.addEventListener('DOMContentLoaded', createProfileCards);
+        document.addEventListener('DOMContentLoaded', () => {
+            createProfileCards();
+            initGame();
+            setGameMode('twoPlayer'); // Default mode
+            draw(); // Initial draw
+        });
     </script>
 </body>
 </html>
