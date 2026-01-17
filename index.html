@@ -739,6 +739,7 @@
             <button class="tab-btn active" data-tab="social1">Sosyal Medya 1</button>
             <button class="tab-btn" data-tab="social2">Sosyal Medya 2</button>
             <button class="tab-btn" data-tab="games">Oyun Profilleri</button>
+            <button class="tab-btn" data-tab="game-settings">Oyun Ayarları</button>
             <button class="tab-btn" data-tab="roblox-games">Oyunlar</button>
             <button class="tab-btn" data-tab="store">Mağaza</button>
             <button class="tab-btn" data-tab="spacewar">Spacewar</button>
@@ -911,7 +912,34 @@
             </div>
         </div>
         
-        <!-- Tab 4: Roblox Games -->
+        <!-- Tab 4: Game Settings -->
+        <div id="game-settings" class="tab-content">
+            <div class="profiles-container">
+                <div class="profile-card">
+                    <div class="platform-icon">CS2</div>
+                    <div class="profile-info">
+                        <div class="platform-name">CS2 Crosshair</div>
+                        <div class="username">CSGO-TpORA-p9Ley-TLQ3P-HzXJY-U9z6A</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="copy-btn" data-username="CSGO-TpORA-p9Ley-TLQ3P-HzXJY-U9z6A">Kopyala</button>
+                    </div>
+                </div>
+                
+                <div class="profile-card">
+                    <div class="platform-icon">VAL</div>
+                    <div class="profile-info">
+                        <div class="platform-name">Valorant Crosshair</div>
+                        <div class="username">0;P;c;5;h;0;d;1;z;3;f;0;s;0;0t;5;0l;1;0v;0;0g;1;0o;0;0a;1;0e;1.0;1b;0</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="copy-btn" data-username="0;P;c;5;h;0;d;1;z;3;f;0;s;0;0t;5;0l;1;0v;0;0g;1;0o;0;0a;1;0e;1.0;1b;0">Kopyala</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab 5: Roblox Games -->
         <div id="roblox-games" class="tab-content">
             <div class="roblox-container">
                 <div class="roblox-card">
@@ -938,7 +966,7 @@
             </div>
         </div>
         
-        <!-- Tab 5: Store -->
+        <!-- Tab 6: Store -->
         <div id="store" class="tab-content">
             <div class="store-container">
                 <div class="store-card">
@@ -987,7 +1015,7 @@
             </div>
         </div>
         
-        <!-- Tab 6: Spacewar Game -->
+        <!-- Tab 7: Spacewar Game -->
         <div id="spacewar" class="tab-content">
             <div class="game-container">
                 <div class="game-header">
@@ -1105,10 +1133,8 @@
             });
         });
         
-        // Game profiles data
+        // Game profiles data (CS2 and Valorant Crosshair removed)
         const profiles = [
-            { platform: "CS2 Crosshair", username: "CSGO-TpORA-p9Ley-TLQ3P-HzXJY-U9z6A", icon: "CS2", link: "" },
-            { platform: "Valorant Crosshair", username: "0;P;c;5;h;0;d;1;z;3;f;0;s;0;0t;5;0l;1;0v;0;0g;1;0o;0;0a;1;0e;1.0;1b;0", icon: "VAL", link: "" },
             { platform: "Epic Games", username: "uzaylul", icon: "E", link: "https://store.epicgames.com/tr/u/989551cb749940d2a498fdd1b5bfa17e" },
             { platform: "Steam", username: "uzaylul", icon: "S", link: "https://steamcommunity.com/id/uzaylul" },
             { platform: "Speedrun.com", username: "uzaylul", icon: "SR", link: "https://speedrun.com/users/uzaylul" },
@@ -1209,6 +1235,16 @@
             this.src = 'https://via.placeholder.com/120/b2775d/1e1e1e?text=U';
             this.alt = 'uzaylul Logo - Yerel logo yüklenemedi';
         };
+        
+        // Initialize copy buttons for game settings tab
+        function initGameSettingsCopyButtons() {
+            document.querySelectorAll('#game-settings .copy-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const username = this.getAttribute('data-username');
+                    copyToClipboard(username);
+                });
+            });
+        }
         
         // ==================== SPACEWAR GAME ====================
         
@@ -2049,6 +2085,7 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
             createProfileCards();
+            initGameSettingsCopyButtons();
             initGame();
             setGameMode('twoPlayer'); // Default mode
             draw(); // Initial draw
